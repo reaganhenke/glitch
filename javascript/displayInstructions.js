@@ -43,21 +43,21 @@ $('body').keypress(function(e){
 
 // print the next line (based on currentLineIndex variable)
 function printLine(){
-  var line = lines[currentLineIndex];
-  var divHolders = $(`<div class='instruction-screen'>
-                      <div class='printed'>
-                      </div>
-                    </div>`);
-  $('.game').append(divHolders);
-  // add a new active line
-  var newLine = $(`<p class='active'></p>`);
-  $('.printed').append(newLine);
-  $('.active').append('> ');
-  if (currentLineIndex == lines.length - 2){
-    // we're on the name entry line
-    typing = true;
+  if (currentLineIndex < lines.length) {
+    var line = lines[currentLineIndex];
+    // add a new active line
+    var newLine = $(`<p class='active'></p>`);
+    $('.printed').append(newLine);
+    $('.active').append('> ');
+    if (currentLineIndex == lines.length - 2){
+      // we're on the name entry line
+      typing = true;
+    } else {
+      printLetter(0);
+    }
   } else {
-    printLetter(0);
+    // no more lines
+    console.log('out of lines');
   }
 }
 
@@ -74,15 +74,12 @@ function printLetter(i){
     // we've finished printing this line
     $('.active').removeClass('active');
     currentLineIndex++;
-    if (currentLineIndex < lines.length) {
-      // if there are more lines
-      setTimeout(printLine, 5); // make this 500 again
-    }
+    setTimeout(printLine, 500);
   } else {
-    // print a letter
+    // print the next letter
     playSound();
     $('.active').append(lines[currentLineIndex][i]);
-    setTimeout(printLetter, 2, i+1); //make this 75 again
+    setTimeout(printLetter, 75, i+1);
   }
 }
 
@@ -91,6 +88,11 @@ function displayInstructions(){
   typing = false;
   name = '';
   currentLineIndex = 0;
+  var divHolders = $(`<div class='instruction-screen'>
+                      <div class='printed'>
+                      </div>
+                    </div>`);
+  $('.game').append(divHolders);
   // call the first line to be printed
   printLine();
 }
