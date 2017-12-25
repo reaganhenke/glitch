@@ -60,3 +60,12 @@ html, body {
 .instruction-screen p.active:after{
   content: '_';
 }
+
+#start-game{
+  font-family: 'VT323', monospace;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 3em;
+}

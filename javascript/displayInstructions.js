@@ -58,6 +58,7 @@ function printLine(){
   } else {
     // no more lines
     console.log('out of lines');
+    $('.instruction-screen').append(`<div id="start-game" class="pulse">click to start</div>`);
   }
 }
 

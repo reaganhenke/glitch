@@ -60,7 +60,7 @@
   }
 }
 
-#start-intructions{
+.pulse{
   animation: pulse 1s infinite linear alternate;
 }
 
