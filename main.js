@@ -22,8 +22,8 @@ $(function() {
     $('.intro-screen').fadeOut('slow', () => {
       //finished the fade out, safe to remove
       $('.intro-screen').remove();
+      console.log('displaying instructions');
         displayInstructions();
-
     });
   }
 

@@ -8,7 +8,8 @@ var instructionText = {
           `i gave you enough automony to figure stuff out on your own`,
           `oh, one more thing!`,
           `i've been calling you program_673, do you want to name yourself?`,
-          `cool. well, good luck [name]. i'll check back in with you tomorrow.`
+          ``,
+          `cool. well, good luck *. i'll check back in with you tomorrow.`
         ]
 }
 
