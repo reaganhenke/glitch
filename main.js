@@ -13,6 +13,7 @@ $(function() {
     methods: {guessing: true, other: false}
   }
 
+  // ~~~~~~~~~~ INTRO ~~~~~~~~~~
   // start the game using enter
   $('body').keydown(function(e) {
     if (e.keyCode == 13){
@@ -43,6 +44,7 @@ $(function() {
     }
   }
 
+  // ~~~~~~~~~~ INSTRUCTIONS ~~~~~~~~~~
   $('#start-game').click(function() {
     console.log('start game clicked');
     startGame();
@@ -59,9 +61,12 @@ $(function() {
         $('.instruction-screen').remove();
           // append the game screen
           console.log('time to append the game');
+          $('.game').append(gameDivs);
       });
     }
   }
+
+  // ~~~~~~~~~~ GAME ~~~~~~~~~~
 
 
 });
