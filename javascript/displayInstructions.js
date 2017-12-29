@@ -61,13 +61,6 @@ function printLine(){
   }
 }
 
-// pick a random keysound to play
-function playSound(){
-  var sounds = ['k1', 'k2', 'k3', 'k4'];
-  var randomId = sounds[Math.floor(Math.random() * 4)];
-  document.getElementById(randomId).play();
-}
-
 // print letter at index i of lines[currentLineIndex]
 function printLetter(i){
   if (i == lines[currentLineIndex].length){
