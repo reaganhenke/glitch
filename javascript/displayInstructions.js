@@ -57,8 +57,7 @@ function printLine(){
     }
   } else {
     // no more lines
-    console.log('out of lines');
-    $('.instruction-screen').append(`<div id="start-game" class="pulse">click to start</div>`);
+    $('.instruction-screen').append(`<div id="start-game" class="pulse">press enter to continue</div>`);
   }
 }
 
@@ -75,12 +74,12 @@ function printLetter(i){
     // we've finished printing this line
     $('.active').removeClass('active');
     currentLineIndex++;
-    setTimeout(printLine, 500);
+    setTimeout(printLine, 50); // normal is 500
   } else {
     // print the next letter
     playSound();
     $('.active').append(lines[currentLineIndex][i]);
-    setTimeout(printLetter, 75, i+1);
+    setTimeout(printLetter, 5, i+1); // normal is 75
   }
 }
 
